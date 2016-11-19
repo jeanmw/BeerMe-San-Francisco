@@ -3,10 +3,10 @@ var Schema = mongoose.Schema;
 
 
 var BeerSchema = new Schema({
-  name: String,
+  nameDisplay: String,
   description: String,
   logo: String,
-  brewery: String,
+  // brewery: String,
   abv: String
 });
 

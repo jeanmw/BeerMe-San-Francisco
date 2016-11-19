@@ -1,4 +1,4 @@
-node_modules
-less
+/node_modules
+/less
 gulpfile.js
 vendor

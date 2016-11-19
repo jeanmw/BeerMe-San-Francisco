@@ -11,7 +11,7 @@ var controllers = require('./controllers');
 
 
 // serve static files from public folder
-app.use(express.static(__dirname + '/public'));
+// app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function homepage (req, res) {

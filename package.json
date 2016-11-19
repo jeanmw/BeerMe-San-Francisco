@@ -1,0 +1,27 @@
+{
+  "name": "beerme-san-francisco",
+  "version": "1.0.0",
+  "description": "Beer Database for San Francisco",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "handlebars": "^4.0.6",
+    "mongoose": "^4.6.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ladydangerdame/BeerMe-San-Francisco.git"
+  },
+  "author": "Emily Derry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ladydangerdame/BeerMe-San-Francisco/issues"
+  },
+  "homepage": "https://github.com/ladydangerdame/BeerMe-San-Francisco#readme"
+}

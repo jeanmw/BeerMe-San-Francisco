@@ -42,7 +42,7 @@ function destroy(req, res) {
 }
 
 function update(req, res) {
-  db.Beer.findOneAndUpdate({_id : _id}, req.body.name, {new: true} ,function(err, updatedBeer){
+  db.Beer.findOneAndUpdate({_id : _id}, req.body, {new: true} ,function(err, updatedBeer){
     if(err){
       console.error(err);
     }
@@ -54,8 +54,9 @@ function searching(req, res){
   console.log('searching:', req.query.q)
   var queryArr=[];
 
+
   queryArr.push(req.query.q.split(' '));
-  
+
   db.Beer.search(queryArr, function(err, beers){
     if(err){
       console.error(err);

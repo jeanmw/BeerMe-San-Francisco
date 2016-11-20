@@ -1,10 +1,10 @@
 $(document).ready(function() {
   console.log("sanigyt che")
-  $('#searchForm').submit(function(e){
+  $('.search').submit(function(e){
     e.preventDefault();
     $.ajax({
         method: 'get',
-        data: data,
+        data: $(this).serialize(),
         url: '/search',
         success: beerSearchSucc,
         error: beerSearchErr
@@ -23,14 +23,17 @@ function beerSearchErr(err){
 function beerSearchSucc(results){
   console.log(results);
 
-  $( "#beers" ).slideToggle( "slow", function() {
-    // Animation complete.
-  });
+  $( "#beers" ).slideToggle( "slow", function() {});
+  render(results, $('#beer-template'), $('#beers'))
+
 }
 
 function render(json, html, target) {
   //  console.log('rendering', json);
+    target.empty();
+    json.forEach(function(ele, idx, arr){
    var hbTemplate = Handlebars.compile(html.html());
-   var htmlData = hbTemplate(json);
-   target.prepend(htmlData);
+   var htmlData = hbTemplate(ele);
+   target.append(ele);
+ })
  }

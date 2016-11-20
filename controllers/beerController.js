@@ -54,7 +54,6 @@ function searching(req, res){
   console.log('searching:', req.query.q)
   var queryArr=[];
 
-
   queryArr.push(req.query.q.split(' '));
 
   db.Beer.search(queryArr, function(err, beers){

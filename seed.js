@@ -6,9 +6,6 @@ var db = require('./models'),
 
 
 var beers = [
-
-
-
     {
       "id": "JmrPJ7",
       "name": "Cortland Wheat",

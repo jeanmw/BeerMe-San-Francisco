@@ -64,22 +64,52 @@
                 <h1 id="homeHeading">BeerMe <br> San Francisco</h1>
                 <hr>
                 <p>Your Local Beer Reference for San Francisco</p>
+                <div class="container">
+                    <div class="row">
+                        <div id="custom-search-input">
+                            <div class="input-group col-md-12">
+                                <form class="search" action="/search">
+                                    <input type="search" autofocus="autofocus" name="q" placeholder="Search Beers">
+                                </form>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
     </header>
 
-
-    <section class="bg-primary">
-         <div class="container">
-            <div class="row">
-                <form class="search" action="/search">
-                    <!-- <div class="form-group"> -->
-                        <label for="beerSearch">Search Your Brew</label>
-                        <input type="text" name="q" class="form-control" id="beerSearch" placeholder="Beer"></input>
-                    <!-- </div> -->
-                </form>
-            </div>
-          </div>
+    <section class="bg-primary" id="about">
+      <div class="container">
+ <h5 class="main-title"> Beer Results </h5>
+ <div  class="row">
+   <div id="beers">
+     <script id="beer-template" type="text/x-handlebars-template">
+     <div class="col l9">
+         <div class="card">
+             <div class="card-content">
+               <ul>
+                 <li>
+                   <p><b>Name: </b>{{name}}</p>
+                 </li>
+                   <p><b>Description: </b>{{description}}</p>
+                 <li>
+                   <p><b>Rating: </b>{{rating}}</p>
+                 </li>
+                 <li>
+                   <p><b>Brewery: </b>{{Brewery}}<p>
+                 </li>
+                 <li>
+                   <p><b>ABV: </b>{{abv}}</p>
+                 </li>
+               </ul>
+             </div>
+         </div>
+     </div>
+   </script>
+ </div>
     </section>
 
     <section id="services">

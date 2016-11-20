@@ -310,6 +310,54 @@ header .header-content .header-content-inner p {
 .open > .dropdown-toggle.btn-default {
   background-image: none;
 }
+/*begin form css*/
+input {
+	outline: none;
+}
+input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 120%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none;
+}
+
+
+input[type=search] {
+	background: rgba(237,237,237,0) url(http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	border: solid 1px rgb(240,95,64);
+	padding: 9px 10px 9px 32px;
+	width: 110px;
+
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+
+	-webkit-transition: all 1.5s;
+	-moz-transition: all 1.5s;
+	transition: all 1.5s;
+}
+input[type=search]:focus {
+	width: 300px;
+	background-color: rgba(237,237,237,0);
+	border-color: rgb(240,95,64);
+
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+
+input:-moz-placeholder {
+	color: white;
+}
+input::-webkit-input-placeholder {
+	color: white;
+}
+/*end form css*/
 .btn-default.disabled,
 .btn-default[disabled],
 fieldset[disabled] .btn-default,

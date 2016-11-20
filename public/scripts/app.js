@@ -23,7 +23,10 @@ function beerSearchErr(err){
 function beerSearchSucc(results){
   console.log(results);
 
-  
+  $( "#beers" ).slideToggle( "slow", function() {
+    // Animation complete.
+  });
+
 }
 
 function render(json, html, target) {

@@ -2,15 +2,14 @@ $(document).ready(function() {
 
   $('.search').on('submit', function(e){
     e.preventDefault();
-    $.ajax({
-        method: 'get',
-        data: data,
-        url: '/search',
-        success: beerSearchSucc,
-        error: beerSearchErr
-      });
-  })
-
+    // $.ajax({
+    //     method: 'get',
+    //     data: data,
+    //     url: '/search',
+    //     success: beerSearchSucc,
+    //     error: beerSearchErr
+    //   });
+  });
 });
 
 
@@ -23,6 +22,8 @@ function beerSearchErr(err){
 
 function beerSearchSucc(results){
   console.log(results);
+
+  
 }
 
 function render(json, html, target) {

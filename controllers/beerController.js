@@ -32,18 +32,22 @@ function show(req, res) {
 }
 
 function destroy(req, res) {
-  db.Beer.findOneAndRemove({_id: id}, function(err, deletedBeer){
+  db.Beer.findOneAndRemove({_id: _id}, function(err, deletedBeer){
     if(err){
       console.error(err);
     }
       console.log('deleted');
-      res.json(deletedBeer);
+      res.send('beer removed')
   });
 }
 
 function update(req, res) {
-
-
+  db.Beer.findOneAndUpdate({_id : _id}, req.body, {new: true} ,function(err, updatedBeer){
+    if(err){
+      console.error(err);
+    }
+    res.json(updatedBeer)
+  });
 }
 
 

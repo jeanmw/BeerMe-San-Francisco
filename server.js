@@ -18,12 +18,13 @@ app.get('/', function homepage (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
+// app.get('/api', controllers.api.index);
+app.get('/api/beer', controllers.beer.index);
+app.get('/api/beer/:_id', controllers.beer.show);
+app.post('/api/beer', controllers.beer.create);
+app.post('/api/beer/:_id', controllers.beer.update)
+app.delete('api/beer/:_id', controllers.beer.destroy);
 
-// app.get('/api/beer', controllers.beer.index);
-// app.get('/api/beer/:_id', controllers.beer.show);
-// app.post('api/beer', controllers.beer.create);
-// app.delete('api/beer/:_id', controllers.beer.destroy);
-//
 
 
 

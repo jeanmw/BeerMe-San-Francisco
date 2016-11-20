@@ -1,14 +1,14 @@
 $(document).ready(function() {
-
-  $('.search').on('submit', function(e){
+  console.log("sanigyt che")
+  $('#searchForm').submit(function(e){
     e.preventDefault();
-    // $.ajax({
-    //     method: 'get',
-    //     data: data,
-    //     url: '/search',
-    //     success: beerSearchSucc,
-    //     error: beerSearchErr
-    //   });
+    $.ajax({
+        method: 'get',
+        data: data,
+        url: '/search',
+        success: beerSearchSucc,
+        error: beerSearchErr
+      });
   });
 });
 
@@ -26,7 +26,6 @@ function beerSearchSucc(results){
   $( "#beers" ).slideToggle( "slow", function() {
     // Animation complete.
   });
-
 }
 
 function render(json, html, target) {

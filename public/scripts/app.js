@@ -1,6 +1,6 @@
 $(document).ready(function() {
-
-  $('.search').on('submit', function(e){
+  console.log("sanigyt che")
+  $('#searchForm').submit(function(e){
     e.preventDefault();
     $.ajax({
         method: 'get',
@@ -9,8 +9,7 @@ $(document).ready(function() {
         success: beerSearchSucc,
         error: beerSearchErr
       });
-  })
-
+  });
 });
 
 

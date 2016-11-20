@@ -42,13 +42,28 @@ function destroy(req, res) {
 }
 
 function update(req, res) {
-  db.Beer.findOneAndUpdate({_id : _id}, req.body, {new: true} ,function(err, updatedBeer){
+  db.Beer.findOneAndUpdate({_id : _id}, req.body.name, {new: true} ,function(err, updatedBeer){
     if(err){
       console.error(err);
     }
     res.json(updatedBeer)
   });
 }
+
+function searching(req, res){
+  console.log('searching:', req.query.q)
+  var queryArr=[];
+
+  queryArr.push(req.query.q.split(' '));
+  
+  db.Beer.search(queryArr, function(err, beers){
+    if(err){
+      console.error(err);
+    }
+    res.json(beers);
+  });
+}
+
 
 
 //export public methods here
@@ -57,5 +72,6 @@ module.exports = {
   create: create,
   show: show,
   destroy: destroy,
-  update: update
+  update: update,
+  searching: searching
 };

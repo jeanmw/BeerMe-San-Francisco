@@ -1,5 +1,6 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
+var searchable = require('mongoose-searchable');
 
 
 var BeerSchema = new Schema({
@@ -9,6 +10,8 @@ var BeerSchema = new Schema({
   // brewery: String,
   abv: String
 });
+
+BeerSchema.plugin(searchable);
 
 var Beer = mongoose.model('Beer', BeerSchema);
 

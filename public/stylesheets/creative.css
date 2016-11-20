@@ -336,9 +336,9 @@ input[type=search] {
 	-moz-border-radius: 10em;
 	border-radius: 10em;
 
-	-webkit-transition: all .5s;
-	-moz-transition: all .5s;
-	transition: all .5s;
+	-webkit-transition: all 1.5s;
+	-moz-transition: all 1.5s;
+	transition: all 1.5s;
 }
 input[type=search]:focus {
 	width: 300px;

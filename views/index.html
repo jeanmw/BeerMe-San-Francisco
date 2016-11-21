@@ -15,10 +15,8 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
-
-
-
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link href="/stylesheets/creative.css" rel='stylesheet' type='text/css'></link>
     <link href="/stylesheets/creative.min.css" rel='stylesheet' type='text/css'></link>
@@ -80,37 +78,69 @@
             </div>
         </div>
     </header>
-
     <section class="bg-primary" id="about">
         <div class="container">
-            <h5 class="main-title"> Beer Results </h5>
-            <div class="row">
-                <div id="beers">
-                    <script id="beer-template" type="text/x-handlebars-template">
-                        <div class="col l9">
-                            <div class="card">
-                                <div class="card-content">
-                                    <ul>
-                                        <li>
-                                            <p><b>Name: </b>{{nameDisplay}}</p>
-                                        </li>
-                                        <p><b>Description: </b>{{description}}</p>
-                                        <li>
-                                            <p><b>Rating: </b>{{rating}}</p>
-                                        </li>
-                                        <li>
-                                            <p><b>Brewery: </b>{{Brewery}}
-                                                <p>
-                                        </li>
-                                        <li>
-                                            <p><b>ABV: </b>{{abv}}</p>
-                                        </li>
-                                    </ul>
+            <div class="container">
+                <h3 class="main-title"> Beer Results </h3>
+                <div class="row">
+                    <div id="beers">
+                        <script id="beer-template" type="text/x-handlebars-template">
+                            <div class="col l9">
+                                <div class="card">
+                                    <div class="card-content" data-beer-id={{_id}}>
+                                        <ul>
+                                            <li>
+                                                <p><b>Name: </b>{{nameDisplay}}</p>
+                                            </li>
+                                            <p><b>Description: </b>{{description}}</p>
+                                            <li>
+                                                <p><b>Rating: </b>{{rating}}</p>
+                                            </li>
+                                            <li>
+                                                <p><b>Brewery: </b>{{Brewery}}</p>
+                                            </li>
+                                            <li>
+                                                <p><b>ABV: </b>{{abv}}</p>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </script>
-                </div>
+                        </script>
+                    </div>
+                    <a href="#openModal">Add Location for this beer</a>
+
+<div id="openModal" class="modalDialog">
+	<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<h2>New Location</h2>
+    <form class="form-horizontal">
+    <fieldset>
+
+    <!-- Form Name -->
+    <legend>Form Name</legend>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">New Location</label>
+      <div class="col-md-4">
+      <input id="textinput" name="textinput" type="text" placeholder="Location Address" class="form-control input-md">
+    </div> 
+    </div>
+
+    <!-- Button (Double) -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="button1id"></label>
+      <div class="col-md-8">
+        <button id="button1id" name="button1id" class="btn btn-success">Submit</button>
+        <button id="button2id" name="button2id" class="btn btn-danger">Cancel</button>
+      </div>
+    </div>
+
+    </fieldset>
+    </form>
+	</div>
+</div>
     </section>
 
     <section id="services">

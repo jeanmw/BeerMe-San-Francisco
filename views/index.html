@@ -83,29 +83,7 @@
  <h3 class="main-title"> Beer Results </h3>
  <div  class="row">
    <div id="beers">
-     <script id="beer-template" type="text/x-handlebars-template">
-     <div class="col l9">
-         <div class="card">
-             <div class="card-content" data-beer-id={{_id}}>
-               <ul>
-                 <li>
-                   <p><b>Name: </b>{{nameDisplay}}</p>
-                 </li>
-                   <p><b>Description: </b>{{description}}</p>
-                 <li>
-                   <p><b>Rating: </b>{{rating}}</p>
-                 </li>
-                 <li>
-                   <p><b>Brewery: </b>{{Brewery}}<p>
-                 </li>
-                 <li>
-                   <p><b>ABV: </b>{{abv}}</p>
-                 </li>
-               </ul>
-             </div>
-         </div>
-     </div>
-   </script>
+
  </div>
     </section>
 
@@ -247,6 +225,29 @@
                 </div>
             </div>
         </div>
+        <script id="beer-template" type="text/x-handlebars-template">
+        <div class="col l9">
+            <div class="card">
+                <div class="card-content" data-beer-id={{_id}}>
+                  <ul>
+                    <li>
+                      <p><b>Name: </b>{{nameDisplay}}</p>
+                    </li>
+                      <p><b>Description: </b>{{description}}</p>
+                    <li>
+                      <p><b>Rating: </b>{{rating}}</p>
+                    </li>
+                    <li>
+                      <p><b>Brewery: </b>{{Brewery}}<p>
+                    </li>
+                    <li>
+                      <p><b>ABV: </b>{{abv}}</p>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+        </div>
+      </script>
 </body>
 
 </html>

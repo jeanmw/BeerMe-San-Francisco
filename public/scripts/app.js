@@ -18,8 +18,16 @@ $(document).ready(function() {
   });
 
   $('').submit(function(e){
-    
-  });
+    e.preventDefault();
+    var data = $(this).serialize();
+    $.ajax({
+        method: 'get',
+        data: query,
+        url: '/search',
+        success: beerSearchSucc,
+        error: beerSearchErr
+      });
+  })
 });
 
 
@@ -38,7 +46,8 @@ function beerSearchSucc(beerResults){
 function render(json, html, target) {
     target.empty();
     if(!json.length){
-      target.append('<h4>Sorry, no results for that.</h4>')
+      target.append('<h4>Sorry, no results for that.</h4>');
+      target.append('<button> Add Your Beer </button');
     }
     json.forEach(function(ele, idx, arr){
       var hbTemplate = Handlebars.compile(html.html());

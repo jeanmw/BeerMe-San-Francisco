@@ -13,6 +13,7 @@ function index(req, res) {
 }
 
 function create(req, res) {
+  console.log(req.body);
   db.Beer.create(rep.body, function(err, beerData){
     if(err){
       console.error(err);

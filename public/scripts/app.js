@@ -20,19 +20,17 @@ function beerSearchErr(err){
   }
 }
 
-function beerSearchSucc(results){
-  $( "#beers" ).slideToggle( "slow", function() {});
-  render(results, $('#beer-template'), $('#beers'));
+function beerSearchSucc(beerResults){
+  // $( "#beers" ).slideToggle( "slow", function() {});
+  render(beerResults, $('#beer-template'), $('#beers'));
 }
 
 function render(json, html, target) {
-  //  console.log('rendering', json);
-    // console.log(json);
-    // target.html().empty();
+    target.empty();
     json.forEach(function(ele, idx, arr){
       console.log(ele)
       var hbTemplate = Handlebars.compile(html.html());
       var htmlData = hbTemplate(ele);
-      target.append(ele);
+      target.append(htmlData);
     });
  }

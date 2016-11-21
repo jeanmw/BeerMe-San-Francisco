@@ -2,13 +2,23 @@ $(document).ready(function() {
   console.log("sanigyt che")
   $('.search').submit(function(e){
     e.preventDefault();
+    var query = $(this).serialize();
+
+    if(query.length <= 4){
+      console.log(query.length);
+      return;
+    }
     $.ajax({
         method: 'get',
-        data: $(this).serialize(),
+        data: query,
         url: '/search',
         success: beerSearchSucc,
         error: beerSearchErr
       });
+  });
+
+  $('').submit(function(e){
+    
   });
 });
 
@@ -27,8 +37,10 @@ function beerSearchSucc(beerResults){
 
 function render(json, html, target) {
     target.empty();
+    if(!json.length){
+      target.append('<h4>Sorry, no results for that.</h4>')
+    }
     json.forEach(function(ele, idx, arr){
-      console.log(ele)
       var hbTemplate = Handlebars.compile(html.html());
       var htmlData = hbTemplate(ele);
       target.append(htmlData);

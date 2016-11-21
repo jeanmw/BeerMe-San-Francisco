@@ -21,17 +21,18 @@ function beerSearchErr(err){
 }
 
 function beerSearchSucc(results){
-  console.log(results);
   $( "#beers" ).slideToggle( "slow", function() {});
-  render(results, $('#beer-template'), $('#beers'))
+  render(results, $('#beer-template'), $('#beers'));
 }
 
 function render(json, html, target) {
   //  console.log('rendering', json);
-    target.empty();
+    // console.log(json);
+    // target.html().empty();
     json.forEach(function(ele, idx, arr){
-   var hbTemplate = Handlebars.compile(html.html());
-   var htmlData = hbTemplate(ele);
-   target.append(ele);
- })
+      console.log(ele)
+      var hbTemplate = Handlebars.compile(html.html());
+      var htmlData = hbTemplate(ele);
+      target.append(ele);
+    });
  }

@@ -52,8 +52,8 @@ function update(req, res) {
 
 function searching(req, res){
   console.log('searching:', req.query.q)
-  var queryArr=[];
-
+  var queryArr = [];
+  queryArr.push(req.query.q);
   queryArr.push(req.query.q.split(' '));
 
   db.Beer.search(queryArr, function(err, beers){
@@ -61,7 +61,8 @@ function searching(req, res){
       console.error(err);
     }
     res.json(beers);
-  });
+ });
+
 }
 
 

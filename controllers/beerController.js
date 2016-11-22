@@ -1,8 +1,5 @@
 var db = require('../models');
 
-
-
-
 function index(req, res) {
   db.Beer.find(function (err, allBeers){
     if(err){
@@ -13,7 +10,7 @@ function index(req, res) {
 }
 
 function create(req, res) {
-  db.Beer.create(rep.body, function(err, beerData){
+  db.Beer.create(req.body, function(err, beerData){
     if(err){
       console.error(err);
     }
@@ -32,7 +29,8 @@ function show(req, res) {
 }
 
 function destroy(req, res) {
-  db.Beer.findOneAndRemove({_id: _id}, function(err, deletedBeer){
+  console.log(req.body);
+  db.Beer.findOneAndRemove({_id: req.body._id}, function(err, deletedBeer){
     if(err){
       console.error(err);
     }
@@ -42,10 +40,12 @@ function destroy(req, res) {
 }
 
 function update(req, res) {
-  db.Beer.findOneAndUpdate({_id : _id}, req.body, {new: true} ,function(err, updatedBeer){
+  console.log(req.body)
+  db.Beer.findOneAndUpdate({_id: req.body._id}, req.body, {new: true} ,function(err, updatedBeer){
     if(err){
       console.error(err);
     }
+    console.log(updatedBeer);
     res.json(updatedBeer)
   });
 }

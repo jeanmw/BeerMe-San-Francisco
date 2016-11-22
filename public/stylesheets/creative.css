@@ -242,7 +242,7 @@ header .header-content .header-content-inner p {
 }
 
 .card-inverse {
-   background-color: rgba(51,51,51,.5);
+   background-color: rgba(51,51,51,.75);
    border-color: white;
    padding: 5px 20px 13px 20px;
  	 border-radius: 10px;
@@ -257,7 +257,7 @@ header .header-content .header-content-inner p {
 	border-radius: 10px;
 	background: rgba(240,95,64,.5);
 }
-.close {
+/*.close {
 	background: #606061;
 	color: #FFFFFF;
 	line-height: 25px;
@@ -274,10 +274,8 @@ header .header-content .header-content-inner p {
 	-moz-box-shadow: 1px 1px 3px #000;
 	-webkit-box-shadow: 1px 1px 3px #000;
 	box-shadow: 1px 1px 3px #000;
-}
-textarea {
-  resize: none;
-}
+}*/
+
 .close:hover { background: #00d9ff; }
 
 .section-heading {

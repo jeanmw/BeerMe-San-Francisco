@@ -18,6 +18,7 @@ $(document).ready(function() {
       });
   });
 
+
   $('.openModal').click(function(e){
     e.preventDefault();
     $(this).closest('.modalForm').modal('toggle');
@@ -36,7 +37,7 @@ $(document).ready(function() {
         success: beerUpdateSucc,
         error: beerUpdateErr
       });
-  });
+
 });
 
 
@@ -77,4 +78,6 @@ function render(json, html, target) {
       var htmlData = hbTemplate(ele);
       target.append(htmlData);
     });
+
+    $('#myModal').modal('show')
  }

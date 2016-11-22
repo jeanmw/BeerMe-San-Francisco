@@ -1,8 +1,5 @@
 var db = require('../models');
 
-
-
-
 function index(req, res) {
   db.Beer.find(function (err, allBeers){
     if(err){
@@ -43,7 +40,7 @@ function destroy(req, res) {
 }
 
 function update(req, res) {
-  db.Beer.findOneAndUpdate({_id : _id}, req.body, {new: true} ,function(err, updatedBeer){
+  db.Beer.findOneAndUpdate({_id: _id}, req.body, {new: true} ,function(err, updatedBeer){
     if(err){
       console.error(err);
     }

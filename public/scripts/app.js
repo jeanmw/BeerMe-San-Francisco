@@ -1,5 +1,6 @@
 $(document).ready(function() {
   console.log("sanigyt che")
+
   $('.search').submit(function(e){
     e.preventDefault();
     var query = $(this).serialize();
@@ -17,18 +18,41 @@ $(document).ready(function() {
       });
   });
 
-  $('').submit(function(e){
+  $('.openModal').click(function(e){
+    e.preventDefault();
+    $(this).closest('.modalForm').modal('toggle');
+    console.log($(this).closest('.modalForm'));
+  });
+
+  $('.modalBtn').closest('beer-id').submit(function(e){
+    console.log('modal submitted');
     e.preventDefault();
     var data = $(this).serialize();
+    console.log("data: " + data);
     $.ajax({
-        method: 'get',
-        data: query,
-        url: '/search',
-        success: beerSearchSucc,
-        error: beerSearchErr
+        method: 'post',
+        data: data,
+        url: '/api/beer/update',
+        success: beerUpdateSucc,
+        error: beerUpdateErr
       });
-  })
+  });
 });
+
+
+function beerUpdateErr(err){
+  if(err){
+    console.error(err);
+  }
+}
+
+function beerUpdateSucc(json){
+
+}
+
+
+
+
 
 
 
@@ -39,7 +63,6 @@ function beerSearchErr(err){
 }
 
 function beerSearchSucc(beerResults){
-  // $( "#beers" ).slideToggle( "slow", function() {});
   render(beerResults, $('#beer-template'), $('#beers'));
 }
 

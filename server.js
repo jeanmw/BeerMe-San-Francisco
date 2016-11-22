@@ -23,12 +23,9 @@ app.get('/api', controllers.api.index);
 app.get('/api/beer', controllers.beer.index);
 app.get('/api/beer/:_id', controllers.beer.show);
 app.post('/api/beer', controllers.beer.create);
-app.put('/api/beer/:_id', controllers.beer.update);
+app.post('/api/beer/update/:_id', controllers.beer.update);
 app.delete('/api/beer/:_id', controllers.beer.destroy);
 app.get('/search', controllers.beer.searching);
-
-
-
 
 
 

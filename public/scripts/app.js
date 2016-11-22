@@ -18,7 +18,7 @@ $(document).ready(function() {
   });
 
   $('').submit(function(e){
-    
+
   });
 });
 
@@ -45,4 +45,6 @@ function render(json, html, target) {
       var htmlData = hbTemplate(ele);
       target.append(htmlData);
     });
+
+    $('#myModal').modal('show')
  }

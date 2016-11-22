@@ -70,7 +70,8 @@
                         <div id="custom-search-input">
                             <div class="input-group col-md-12">
                                 <form class="search" id="searchForm" action="/search">
-                                    <input type="search" autofocus="autofocus" name="q" placeholder="Search Beers">
+                                    <input type="search" autofocus="autofocus" name="q" placeholder="Search Beers"><br>
+                                    <button class="btn btn-primary" type="submit">BeerMe!</button>
                                 </form>
                             </div>
                         </div>
@@ -80,12 +81,20 @@
         </div>
     </header>
     <section class="bg-primary" id="about">
-        <div class="container">
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Text Input</label>
+            <div class="col-md-4">
+                <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+                <div class="col-md-4">
+                    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Add</button>
+                </div>
+            </div>
             <div class="container">
-                <h3 class="main-title"> Beer Results </h3>
-                <div class="row">
-                    <div id="beers">
-                    </div>
+                <div class="container">
+                    <h3 class="main-title"> Here's your beers! </h3>
+                    <div class="row">
+                        <div id="beers">
+                        </div>
     </section>
 
     <section id="services">
@@ -252,9 +261,8 @@
                                             <p><b>ABV: </b>{{abv}}</p>
                                         </li>
                                 </ul>
-                                <a href="#" class="btn btn-primary">Edit</a>
+                                <a href="#openModal" class="btn btn-primary">Edit</a>
                             </div>
-                            <a href="#openModal">Edit</a>
                             <div id="openModal" class="modalDialog">
                                 <div>
                                     <a href="#close" title="Close" class="close">X</a>
@@ -262,34 +270,25 @@
                                     <form class="form-horizontal">
                                         <fieldset>
                                             <div class="form-group">
-                                                <label class="col-md-4 control-label" for="textinput">Name</label>
-                                                <div class="col-md-4">
-                                                    <input id="textinput" value="{{nameDisplay}}" name="textinput" type="text" class="form-control input-md">
+                                                <label class="col-sm-2 control-label" for="textinput">Name</label>
+                                                <div class="col-sm-10">
+                                                    <input type="textinput" class="form-control" value="{{nameDisplay}}" />
                                                 </div>
-                                                <label class="col-md-4 control-label" for="textinput">Description</label>
-                                                <div class="col-md-4">
-                                                    <textarea id="textinput" rows="15" form="form-horizontal" name="textinput" type="text" class="form-control input-md">{{description}}
-                                                    </textarea>
-                                                    <label class="col-md-4 control-label" for="textinput">Brewery</label>
-                                                    <div class="col-md-4">
-                                                        <input id="textinput" value="{{Brewery}}" name="textinput" type="text" class="form-control input-md">
-                                                    </div>
-                                                    <label class="col-md-4 control-label" for="textinput">ABV%</label>
-                                                    <div class="col-md-4">
-                                                        <input id="textinput" value="{{abv}}" name="textinput" type="text" class="form-control input-md">
-                                                    </div>
+                                                <label class="col-sm-2 control-label" for="textinput">Brewery</label>
+                                                <div class="col-sm-10">
+                                                    <input type="textinput" value="{{Brewery}}" name="textinput" type="text" class="form-control input-md">
                                                 </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-md-4 control-label" for="button1id"></label>
-                                                <div class="col-md-8">
-                                                    <button id="button1id" name="button1id" class="btn btn-success">Submit</button>
+                                                <label class="col-sm-2 control-label" for="textinput">ABV%</label>
+                                                <div class="col-sm-10">
+                                                    <input type="textinput" value="{{abv}}" name="textinput" type="text" class="form-control input-md">
                                                 </div>
-                                            </div>
+                                                <div class="modal-footer">
+                                                    <a href="#close" class="btn btn-default">Close</a>
+                                                    <a href="#save" class="btn btn-primary">Save changes</a>
+                                                </div>
                                         </fieldset>
                                     </form>
-                                </div>
-                            </div>
+
         </script>
 </body>
 

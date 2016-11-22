@@ -435,7 +435,21 @@ input[type=search]:focus {
     -moz-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
     box-shadow: 0 0 5px rgba(109, 207, 246, .5);
 }
-
+#searchButton {
+  color: #D3D3D3;
+  text-align: center;
+  background-color: rgba(240, 95, 64, 1);
+  font-family: serif;
+  font-weight: lighter;
+  width: 150px;
+  -webkit-border-radius: 10em;
+  -moz-border-radius: 10em;
+  border-radius: 10em;
+  border-color: rgb(240, 95, 64);
+  -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+  -moz-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+  box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+}
 input:-moz-placeholder {
     color: #D3D3D3;
 }

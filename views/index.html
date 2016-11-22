@@ -240,6 +240,28 @@
             </div>
         </div>
       </section>
+      <form class="form-horizontal addBeer"  method="Post" action="/api/beer/create">
+          <fieldset>
+              <div class="form-group">
+                  <label class="col-sm-2 control-label" for="textinput">Name</label>
+                  <div class="col-sm-10">
+                      <input type="textinput" class="form-control" name="nameDisplay"/>
+                  </div>
+                  <label class="col-sm-2 control-label" for="textinput">Description</label>
+                  <div class="col-sm-10">
+                      <input type="textinput" name="description" class="form-control input-md">
+                  </div>
+                  <label class="col-sm-2 control-label" for="textinput">ABV%</label>
+                  <div class="col-sm-10">
+                      <input type="textinput"  name="abv"  class="form-control input-md">
+                  </div>
+                  <div class="modal-footer">
+                      <input class="addBeerBtn btn btn-primary" type="submit" value="Add Beer">
+                  </div>
+              </div>
+          </fieldset>
+      </form>
+
         <script id="beer-template" type="text/x-handlebars-template">
             <div class="col l9">
                 <div class="card">

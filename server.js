@@ -24,7 +24,7 @@ app.get('/api/beer', controllers.beer.index);
 app.get('/api/beer/:_id', controllers.beer.show);
 app.get('/search', controllers.beer.searching);
 
-app.post('/api/beer', controllers.beer.create);
+app.post('/api/beer/create', controllers.beer.create);
 app.post('/api/beer/update/:_id', controllers.beer.update);
 
 app.delete('/api/beer/:_id', controllers.beer.destroy);

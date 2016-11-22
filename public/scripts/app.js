@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  console.log("sanigyt che");
+
   $('.search').submit(function(e){
     e.preventDefault();
     var query = $(this).serialize();
@@ -18,7 +18,6 @@ $(document).ready(function() {
 
 
   $('.modalBtn').closest('beer-id').submit(function(e){
-    console.log('modal submitted');
     e.preventDefault();
     var data = $(this).serialize();
     console.log("data: " + data);
@@ -32,8 +31,36 @@ $(document).ready(function() {
   });
 
 
+  $('.addBeer').submit(function(e){
+    e.preventDefault();
+    console.log($(this).serialize());
+    $.ajax({
+        method: 'post',
+        data: $(this).serialize(),
+        url: '/api/beer/create',
+        success: beerCreateSucc,
+        error: beerCreateErr
+      });
+  });
+
+
 
 });
+
+function beerCreateErr(err){
+  if(err){
+  console.error(err);
+  }
+}
+
+function beerCreateSucc(json){
+  console.log(json);
+}
+
+
+
+
+
 
 function beerDeleteErr(err){
   if(err){
@@ -76,6 +103,7 @@ function beerSearchErr(err){
 function beerSearchSucc(beerResults){
   render(beerResults, $('#beer-template'), $('#beers'));
   $('.deleteBtn').click(function(e){
+    e.preventDefault();
     var id = $(this).data('beer-id');
     console.log(id);
     $.ajax({

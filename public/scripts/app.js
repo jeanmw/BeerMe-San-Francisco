@@ -16,10 +16,6 @@ $(document).ready(function() {
       });
   });
 
-  $('.openModal').click(function(e){
-    e.preventDefault();
-    $(this).closest('.modalForm').modal('show');
-  });
 
   $('.modalBtn').closest('beer-id').submit(function(e){
     console.log('modal submitted');
@@ -35,7 +31,32 @@ $(document).ready(function() {
       });
   });
 
+  $('.deleteForm').click(function(e){
+    e.preventDefault();
+    $.ajax({
+      method: 'delete',
+      url: '/api/beer/:id',
+      success: beerDeleteSucc,
+      error: beerDeleteErr
+    })
+  });
+
 });
+
+function beerDeleteErr(err){
+  if(err){
+    console.error(err);
+  }
+}
+
+function beerDeleteSucc(json){
+  console.log('beer deleted');
+}
+
+
+
+
+
 
 
 function beerUpdateErr(err){

@@ -40,10 +40,12 @@ function destroy(req, res) {
 }
 
 function update(req, res) {
-  db.Beer.findOneAndUpdate({_id: _id}, req.body, {new: true} ,function(err, updatedBeer){
+  console.log(req.body)
+  db.Beer.findOneAndUpdate({_id: req.body._id}, req.body, {new: true} ,function(err, updatedBeer){
     if(err){
       console.error(err);
     }
+    console.log(updatedBeer);
     res.json(updatedBeer)
   });
 }

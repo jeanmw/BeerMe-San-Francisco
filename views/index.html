@@ -79,26 +79,26 @@
                     </div>
                 </div>
             </div>
-          </div>
+        </div>
     </header>
     <section class="bg-primary" id="about">
         <!-- <div class="form-group">
             <label class="col-md-4 control-label" for="textinput">Text Input</label> -->
-            <!-- <div class="col-md-4">
+        <!-- <div class="col-md-4">
                 <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
                 <div class="col-md-4">
                     <button id="singlebutton" name="singlebutton" class="btn btn-primary">Add</button>
                 </div>
             </div> -->
+        <div class="container">
             <div class="container">
-                <div class="container">
-                    <h3 class="main-title"> Here's your beers! </h3>
-                    <div class="row">
-                        <div id="beers">
-                        </div>
+                <h3 class="main-title"> Here's your beers! </h3>
+                <div class="row">
+                    <div id="beers">
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
     <section id="services">
@@ -239,6 +239,7 @@
                 </div>
             </div>
         </div>
+      </section>
         <script id="beer-template" type="text/x-handlebars-template">
             <div class="col l9">
                 <div class="card">
@@ -253,48 +254,51 @@
                                 <ul>
                                     <li>
                                         <p><b>Description: </b>{{description}}</p>
-                                        <li>
+                                        <!-- <li>
                                             <p><b>Rating: </b>{{rating}}</p>
                                         </li>
                                         <li>
                                             <p><b>Brewery: </b>{{Brewery}}<p>
-                                        </li>
+                                        </li> -->
                                         <li>
-                                            <p><b>ABV: </b>{{abv}}</p>
+                                            <p><b>ABV: </b>{{abv}}%</p>
                                         </li>
                                 </ul>
                                 <a href="#openModal" class="btn btn-primary">Edit</a>
+                                  <button class="btn deleteBtn">Delete Beer</button>
                             </div>
                             <div id="openModal" class="modalDialog">
                                 <div>
                                     <a href="#close" title="Close" class="close">X</a>
                                     <h4>Edit</h4>
-                                    <form class="form-horizontal" id="{{_id}}">
+                                    <form class="form-horizontal" id="{{_id}}" method="Post" action="/api/beer/update/{{_id}}">
                                         <fieldset>
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label" for="textinput">Name</label>
                                                 <div class="col-sm-10">
-                                                    <input type="textinput" class="form-control" value="{{nameDisplay}}" />
+                                                    <input type="hidden" name="_id" value="{{_id}}">
+                                                    <input type="textinput" class="form-control" name="nameDisplay" value="{{nameDisplay}}" />
                                                 </div>
-                                                <label class="col-sm-2 control-label" for="textinput">Brewery</label>
+                                                <label class="col-sm-2 control-label" for="textinput">Description</label>
                                                 <div class="col-sm-10">
-                                                    <input type="textinput" value="{{Brewery}}" name="textinput" type="text" class="form-control input-md">
+                                                    <input type="textinput" value="{{description}}" name="description" type="text" class="form-control input-md">
                                                 </div>
                                                 <label class="col-sm-2 control-label" for="textinput">ABV%</label>
                                                 <div class="col-sm-10">
-                                                    <input type="textinput" value="{{abv}}" name="textinput" type="text" class="form-control input-md">
+                                                    <input type="textinput" value="{{abv}}" name="abv" type="text" class="form-control input-md">
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <a href="#close" class="btn btn-default">Close</a>
-                                                    <a href="#save" class="btn btn-primary">Save changes</a>
+                                                    <input class="modalBtn btn btn-primary" type="submit" value="Save">
                                                 </div>
-                                              </div>
+                                            </div>
                                         </fieldset>
                                     </form>
-                                  </div>
                                 </div>
-
-
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </script>
 </body>
 

@@ -69,32 +69,36 @@
                     <div class="row">
                         <div id="custom-search-input">
                             <div class="input-group col-md-12">
-                                <form class="search" id="searchForm" action="/search">
-                                    <input type="search" autofocus="autofocus" name="q" placeholder="Search Beers"><br>
-                                    <button class="btn btn-primary" type="submit">BeerMe!</button>
+                                <form class="search" id="searchForm" method="get" action="/search">
+                                    <input type="search" autofocus="autofocus" name="q" placeholder="Search Beers">
+                                    <br>
+                                    <input class="btn btn-primary" type="submit" value="BeerMe!">
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+          </div>
     </header>
     <section class="bg-primary" id="about">
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">Text Input</label>
-            <div class="col-md-4">
+        <!-- <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Text Input</label> -->
+            <!-- <div class="col-md-4">
                 <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
                 <div class="col-md-4">
                     <button id="singlebutton" name="singlebutton" class="btn btn-primary">Add</button>
                 </div>
-            </div>
+            </div> -->
             <div class="container">
                 <div class="container">
                     <h3 class="main-title"> Here's your beers! </h3>
                     <div class="row">
                         <div id="beers">
                         </div>
+                    </div>
+                </div>
+            </div>
     </section>
 
     <section id="services">
@@ -259,57 +263,13 @@
                                             <p><b>ABV: </b>{{abv}}</p>
                                         </li>
                                 </ul>
-<<<<<<< HEAD
-                                <button class="openModal" class="btn btn-primary">Edit</button>
-                                <div class="modalDialog">
-                                        <a href="#close" title="Close" class="close">X</a>
-                                        <h4>Edit</h4>
-                                        <form class="form-horizontal modalForm" data-beer-id={{_id}} action="/api/beer/update/{{_id}}" method="post">
-                                            <fieldset>
-                                                <div class="form-group">
-                                                    <label class="col-md-4 control-label" for="textinput">Name</label>
-                                                    <div class="col-md-4">
-                                                        <input id="textinput" value="{{nameDisplay}}" name="nameDisplay" type="text" class="form-control input-md">
-                                                    </div>
-                                                    <label class="col-md-4 control-label" for="textinput">Description</label>
-                                                    <div class="col-md-4">
-                                                        <textarea id="textinput" rows="15" form="form-horizontal" name="description" type="text" class="form-control input-md">{{description}}
-                                                        </textarea>
-                                                        <label class="col-md-4 control-label" for="textinput">Brewery</label>
-                                                        <div class="col-md-4">
-                                                            <input id="textinput" value="{{Brewery}}" name="Brewery" type="text" class="form-control input-md">
-                                                        </div>
-                                                        <label class="col-md-4 control-label" for="textinput">ABV%</label>
-                                                        <div class="col-md-4">
-                                                            <input id="textinput" value="{{abv}}" name="abc" type="text" class="form-control input-md">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-4 control-label" for="button1id"></label>
-                                                    <div class="col-md-8">
-                                                        <input type="submit" name="button1id" value="Submit" class="btn btn-success modalBtn">
-                                                    </div>
-                                                </div>
-                                            </fieldset>
-                                        </form>
-                                </div>
-                            </div>
-
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                </script>
-=======
                                 <a href="#openModal" class="btn btn-primary">Edit</a>
                             </div>
                             <div id="openModal" class="modalDialog">
                                 <div>
                                     <a href="#close" title="Close" class="close">X</a>
                                     <h4>Edit</h4>
-                                    <form class="form-horizontal">
+                                    <form class="form-horizontal" id="{{_id}}">
                                         <fieldset>
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label" for="textinput">Name</label>
@@ -328,11 +288,14 @@
                                                     <a href="#close" class="btn btn-default">Close</a>
                                                     <a href="#save" class="btn btn-primary">Save changes</a>
                                                 </div>
+                                              </div>
                                         </fieldset>
                                     </form>
+                                  </div>
+                                </div>
+
 
         </script>
->>>>>>> 820f506ece42914bbe9ce022acc4e78630b03675
 </body>
 
 </html>

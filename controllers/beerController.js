@@ -30,7 +30,8 @@ function show(req, res) {
 }
 
 function destroy(req, res) {
-  db.Beer.findOneAndRemove({_id: _id}, function(err, deletedBeer){
+  console.log(req.body);
+  db.Beer.findOneAndRemove({_id: req.body._id}, function(err, deletedBeer){
     if(err){
       console.error(err);
     }

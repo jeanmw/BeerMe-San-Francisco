@@ -31,15 +31,7 @@ $(document).ready(function() {
       });
   });
 
-  $('.deleteForm').click(function(e){
-    e.preventDefault();
-    $.ajax({
-      method: 'delete',
-      url: '/api/beer/:id',
-      success: beerDeleteSucc,
-      error: beerDeleteErr
-    })
-  });
+
 
 });
 
@@ -83,6 +75,18 @@ function beerSearchErr(err){
 
 function beerSearchSucc(beerResults){
   render(beerResults, $('#beer-template'), $('#beers'));
+  $('.deleteBtn').click(function(e){
+    var id = $(this).data('beer-id');
+    console.log(id);
+    $.ajax({
+      method: 'delete',
+      data: {_id: id},
+      url: '/api/beer/' + id,
+      success: beerDeleteSucc,
+      error: beerDeleteErr
+    });
+  });
+
 }
 
 function render(json, html, target) {
